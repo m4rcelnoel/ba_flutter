@@ -38,9 +38,8 @@ class _MainLayoutState extends State<MainLayout> {
           ),
         ],
       ),
-
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.black,
           currentIndex: _currentIndex,
           onTap: (index) {
             setState(() {
@@ -48,13 +47,13 @@ class _MainLayoutState extends State<MainLayout> {
             });
           },
           type: BottomNavigationBarType.fixed,
-          selectedItemColor: Colors.redAccent,
+          selectedItemColor: Colors.blueAccent,
           unselectedItemColor: Colors.grey,
           showSelectedLabels: true,
           showUnselectedLabels: true,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+            BottomNavigationBarItem(icon: Icon(Icons.info_outline), label: 'Info'),
           ],
       ),
     );

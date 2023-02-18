@@ -17,6 +17,9 @@ class MyBaFlaskApp extends StatelessWidget {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: MaterialApp(
+        theme: ThemeData(
+          scaffoldBackgroundColor: Colors.black,
+        ),
       debugShowCheckedModeBanner: false,
       routes: {
         '/mainlayout': (context) => MainLayout(),

@@ -82,9 +82,9 @@ class DataWidget extends StatelessWidget {
               children: data!
                   .map(
                     (Data data) => ListTile(
-                      title: Text(data.name),
-                      subtitle: Text("${data.description}"),
-                      trailing: Text("${data.price}"),
+                      title: Text(data.name, style: TextStyle(color: Colors.white),),
+                      subtitle: Text("${data.description}", style: TextStyle(color: Colors.grey),),
+                      trailing: Text("${data.price}", style: TextStyle(color: Colors.white),),
                     ),
                   )
                   .toList(),
