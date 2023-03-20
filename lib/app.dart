@@ -10,27 +10,27 @@ class MainLayout extends StatefulWidget {
 }
 
 class _MainLayoutState extends State<MainLayout> {
-  int _currentIndex = 0;
+  int _currentIndex = 0; //Index der Bottom NavigationBar
 
-  final _page1 = GlobalKey<NavigatorState>();
-  final _page2 = GlobalKey<NavigatorState>();
+  final _page1 = GlobalKey<NavigatorState>(); //Definieren des Keys für page1
+  final _page2 = GlobalKey<NavigatorState>(); //Definieren des Keys für page2
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(
-        index: _currentIndex,
+        index: _currentIndex, 
         children: <Widget>[
           Navigator(
-            key: _page1,
+            key: _page1, //Verwenden des Keys
             onGenerateRoute: (route) => MaterialPageRoute(
               settings: route,
               builder: (context) => HomePage(),
             ),
           ),
           Navigator(
-            key: _page2,
+            key: _page2, //Verwenden des Keys
             onGenerateRoute: (route) => MaterialPageRoute(
               settings: route,
               builder: (context) => ContactPage(),
@@ -38,7 +38,7 @@ class _MainLayoutState extends State<MainLayout> {
           ),
         ],
       ),
-        bottomNavigationBar: BottomNavigationBar(
+        bottomNavigationBar: BottomNavigationBar( //BottomNavigationBar
           backgroundColor: Colors.black,
           currentIndex: _currentIndex,
           onTap: (index) {
@@ -52,8 +52,8 @@ class _MainLayoutState extends State<MainLayout> {
           showSelectedLabels: true,
           showUnselectedLabels: true,
           items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.info_outline), label: 'Info'),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'), //Definieren der Option
+            BottomNavigationBarItem(icon: Icon(Icons.info_outline), label: 'Info'), //Definieren der Option
           ],
       ),
     );

@@ -1,16 +1,17 @@
-# ba_flutter
+# Flutter
+## Flutter SDK installieren
 
-A new Flutter project.
+Um eine Flutter-App zu starten, ist es notwendig, die Flutter-SDK auf Ihrem System zu installieren.
+Eine detaillierte Anleitung zur Installation der Flutter-SDK finden Sie auf der offiziellen Flutter-Website unter dem folgenden Link:
 
-## Getting Started
+https://docs.flutter.dev/get-started/install
 
-This project is a starting point for a Flutter application.
+## Flutter App starten
 
-A few resources to get you started if this is your first Flutter project:
+Wenn Sie die SDK installiert haben können Sie die App starten indem Sie in das Verzeichnis der App navigieren.
+Sobald Sie sich im Verzeichnis der App befinden, können Sie die App auf einem Simulator oder einem angeschlossenen Gerät starten.
+Dazu müssen Sie nur den folgenden Befehl im Terminal ausführen:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+`flutter run`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Dieser Befehl startet die App und zeigt sie auf Ihrem Simulator oder Gerät an.

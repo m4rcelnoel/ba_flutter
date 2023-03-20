@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ba_flutter/pages/drinks_page.dart';
 
+//Definieren der Liste für das Menü
 List menus = [
   {"title": "Kaffee", "imageName": "coffee.png", "name": "hotdrinks"},
   {"title": "Heiße Schoko", "imageName": "hotchoco.png", "name": "hotchocolate"},
@@ -22,7 +23,7 @@ class HomePage extends StatelessWidget {
         body: Container(
       child: Column(
         children: [
-          Container(
+          Container( //Container für das Banner Bild
               child: Stack(
             children: [
               Positioned(
@@ -48,14 +49,14 @@ class HomePage extends StatelessWidget {
               ),
             ],
           )),
-          Flexible(
+          Flexible( //Flexibler Container für das Raster Menü
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: GridView(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
+                  crossAxisCount: 2, //Anzahl Elemente pro Zeile und Spalte
+                  crossAxisSpacing: 10, //Abstand zwischen den Elementen horizontal
+                  mainAxisSpacing: 10, //Abstand zwischen den Elementen vertikal
                 ),
                 children: <Widget>[
                   for ( var i in menus ) InkWell(
@@ -63,7 +64,7 @@ class HomePage extends StatelessWidget {
                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => DrinksPage(i["name"])));
                     },
                     child: Stack(
-                    children: [
+                    children: [ //Container für das Bild der Menüs
                       Positioned(
                         child: Container(
                           decoration: BoxDecoration(
@@ -72,7 +73,7 @@ class HomePage extends StatelessWidget {
                             fit: BoxFit.cover)
                           ),
                         )),
-                        Positioned(
+                        Positioned( //Container für den Titel des Menüs
                         bottom: 0,
                         left: 0,
                         right: 0,

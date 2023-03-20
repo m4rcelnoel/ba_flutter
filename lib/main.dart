@@ -6,7 +6,7 @@ import 'package:ba_flutter/pages/drinks_page.dart';
 import 'package:flutter/services.dart';
 
 void main() async{
-  runApp(MyBaFlaskApp());
+  runApp(MyBaFlaskApp()); // Starten der App
 }
 
 class MyBaFlaskApp extends StatelessWidget {
@@ -16,17 +16,17 @@ class MyBaFlaskApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
-      child: MaterialApp(
+      child: MaterialApp( //Verwenden von Material App
         theme: ThemeData(
-          scaffoldBackgroundColor: Colors.black,
+          scaffoldBackgroundColor: Colors.black, //Einstellen des App-Themes
         ),
       debugShowCheckedModeBanner: false,
-      routes: {
+      routes: { //Definieren der Routen
         '/mainlayout': (context) => MainLayout(),
         '/page1': (context) => HomePage(),
         '/page2': (context) => ContactPage(),
       },
-      initialRoute: '/mainlayout',
+      initialRoute: '/mainlayout', // Start-Route
       )
     );
   }

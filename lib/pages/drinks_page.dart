@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ba_flutter/api/httpService.dart';
-import 'package:ba_flutter/api/model.dart';
+import 'package:ba_flutter/api/model.dart'; // Import des Modells
 import 'dart:convert';
 import 'package:http/http.dart';
 
 class DrinksPage extends StatelessWidget {
-  final i;
+  final i; // Definieren der Variable
   DrinksPage(this.i, {super.key});
 
   @override
@@ -13,7 +12,7 @@ class DrinksPage extends StatelessWidget {
     return Scaffold(
         body: Container(
       child: Column(children: [
-        Container(
+        Container( // Container für das Banner Bild
           child: Stack(
             children: [
               Positioned(
@@ -40,17 +39,19 @@ class DrinksPage extends StatelessWidget {
             ],
           ),
         ),
-        DataWidget(i),
+        DataWidget(i), // DataWidget für das Anzeigen der Daten
       ]),
     ));
   }
 }
 
+// Definieren des DataWidgets
 class DataWidget extends StatelessWidget {
   DataWidget(this.i, {super.key});
 
   final i;
 
+  // Funktion zum Abrufen der Daten von der API
   Future<List<Data>> getData() async {
     print(i);
     Response res = await get(Uri.parse("https://ba.0bdd.de/api/v1/ba/$i"));
@@ -74,7 +75,7 @@ class DataWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Flexible(
       child: FutureBuilder(
-        future: getData(),
+        future: getData(), // Verwenden der getData-Funktion als Future
         builder: (BuildContext context, AsyncSnapshot<List<Data>> snapshot) {
           if (snapshot.hasData) {
             List<Data>? data = snapshot.data;
@@ -90,7 +91,7 @@ class DataWidget extends StatelessWidget {
                   .toList(),
             );
           } else {
-            return Center(child: CircularProgressIndicator());
+            return Center(child: CircularProgressIndicator()); // Anzeigen eines Ladeindikators, wenn die Daten geladen werden
           }
         },
       ),
