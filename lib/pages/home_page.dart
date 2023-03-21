@@ -9,7 +9,7 @@ List menus = [
   {"title": "Eiskaltes", "imageName": "colddrinks.png", "name": "icecold"},
   {"title": "Softdrinks", "imageName": "softdrinks.png", "name": "softdrinks"},
   {"title": "Säfte", "imageName": "juice.png", "name": "juice"},
-  {"title": "Snacks", "imageName": "snacks.png", "name": "softdrinks"},
+  {"title": "Snacks", "imageName": "snacks.png", "name": "snacks"},
 ];
 
 void main() => runApp(const HomePage());
